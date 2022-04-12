@@ -1,1 +1,3 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+# Attack Chivivus Man
+
+smart contracts and Next.js webapp. 
