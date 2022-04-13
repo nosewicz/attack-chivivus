@@ -97,7 +97,8 @@ const Arena = ({ characterNFT, setCharacterNFT, currentAccount }) => {
       {boss && characterNFT && (
         <div id="toast" className={showToast ? 'show' : ''}>
           <div id="desc">
-            {`💥 ${boss.name} was hit for ${characterNFT.attackDamage}!`}
+            {`💥 ${boss.name} was hit for ${characterNFT.attackDamage}!`}<br />
+            {`💥 ${characterNFT.name} was struck back for ${boss.attackDamage}!`}
           </div>
         </div>
       )}
@@ -114,9 +115,18 @@ const Arena = ({ characterNFT, setCharacterNFT, currentAccount }) => {
             </div>
           </div>
           <div className="attack-container my-10 mx-auto">
+            {characterNFT.hp > 0 ?
               <button className="cta-button bg-violet-500 hover:bg-violet-700 text-white font-bold py-2 px-4 rounded text-center" onClick={runAttackAction}>
                 {`💥 Attack ${boss.name}`}
               </button>
+            : 
+              <div>
+                <p className="text-slate-400">Your HP is at Zero. Thank you for playing. </p>
+                <button className="cta-button bg-slate-500 text-white font-bold py-2 px-4 rounded text-center">
+                  {`💥 Attack ${boss.name} Disabled`}
+                </button>
+              </div>
+              }
           </div>
           {attackState === 'attacking' && (
             <div className="loading-indicator text-slate-400">
