@@ -21,6 +21,7 @@ const SelectCharacter = ({ setCharacterNFT }) => {
       }
     } catch (error) {
       console.warn("MintCharacterAction Error: ", error)
+      alert("MintCharacterAction Error: ", error)
       setMintingCharacter(false)
     }
   }
